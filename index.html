@@ -4,19 +4,19 @@
     <title>Zemare App</title>
     <script>
         function redirect() {
-            // Get songId from the URL query parameters
+            // Parse the songId from the URL query parameters
             const urlParams = new URLSearchParams(window.location.search);
             const songId = urlParams.get('songId');
 
-            // Construct the deep link with the dynamic songId
+            // Attempt to open the app with the deep link if songId is provided
             if (songId) {
-                window.location = `zemare://lyrics?songId=${songId}`;
+                window.location.href = `zemare://lyrics?songId=${songId}`;
             }
 
-            // Fallback to app store link if the app is not installed
+            // Fallback to the app store if the app is not installed or deep link fails
             setTimeout(function () {
-                window.location = "https://onelink.to/bgxpr5";
-            }, 2000);
+                window.location.href = "https://onelink.to/bgxpr5";
+            }, 1500); // Slightly shorter delay for a better user experience
         }
     </script>
 </head>
