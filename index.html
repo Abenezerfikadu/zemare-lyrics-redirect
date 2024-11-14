@@ -10,12 +10,13 @@
 
             // Attempt to open the app with the deep link if songId is provided
             if (songId) {
+                // Construct the deep link to pass the songId to the app
                 window.location.href = `zemare://lyrics?songId=${songId}`;
             }
 
             // Fallback to the app store if the app is not installed or deep link fails
             setTimeout(function () {
-                window.location.href = "https://onelink.to/bgxpr5";
+                window.location.href = "https://onelink.to/bgxpr5";  // Fallback URL for app store
             }, 1500); // Slightly shorter delay for a better user experience
         }
     </script>
