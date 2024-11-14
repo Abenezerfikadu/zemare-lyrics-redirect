@@ -4,20 +4,20 @@
     <title>Zemare App</title>
     <script>
         function redirect() {
-            // Parse the songId from the URL query parameters
+  
             const urlParams = new URLSearchParams(window.location.search);
             const songId = urlParams.get('songId');
 
-            // Attempt to open the app with the deep link if songId is provided
+        
             if (songId) {
-                // Redirect to the app's URL with songId
+        
                 window.location.href = `https://abenezerfikadu.github.io/zemare-lyrics-redirect/?songId=${songId}`;
             } else {
-                // Go directly to the app store if no songId is provided
+          
                 window.location.href = "https://onelink.to/bgxpr5";
             }
 
-            // Fallback to the app store if deep link fails
+
             setTimeout(function () {
                 window.location.href = "https://onelink.to/bgxpr5";
             }, 1000);
