@@ -4,9 +4,16 @@
     <title>Zemare App</title>
     <script>
         function redirect() {
-            window.location = "zemare://lyrics?songId=1d27437f-4f24-40fa-8484-e20d73f16894"; 
+            // Get songId from the URL query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const songId = urlParams.get('songId');
 
-           
+            // Construct the deep link with the dynamic songId
+            if (songId) {
+                window.location = `zemare://lyrics?songId=${songId}`;
+            }
+
+            // Fallback to app store link if the app is not installed
             setTimeout(function () {
                 window.location = "https://onelink.to/bgxpr5";
             }, 2000);
