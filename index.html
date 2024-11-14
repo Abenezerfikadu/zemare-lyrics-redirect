@@ -7,19 +7,18 @@
             const urlParams = new URLSearchParams(window.location.search);
             const songId = urlParams.get('songId');
 
-            // Only attempt redirect if songId is missing in the current URL
-            if (songId) {
-                // Redirect to app with songId if available
+            // Only perform deep link redirect if accessed from entry point (not from /zemare-lyrics-redirect itself)
+            if (!window.location.pathname.includes("zemare-lyrics-redirect") && songId) {
                 window.location.href = `zemare://lyrics?songId=${songId}`;
+                
+                // Set fallback to App Store if deep link fails
+                setTimeout(function () {
+                    window.location.href = "https://onelink.to/bgxpr5";
+                }, 1500);
             } else {
-                // Redirect to app store if no songId is provided
+                // If no songId or already on redirect page, go directly to App Store
                 window.location.href = "https://onelink.to/bgxpr5";
             }
-
-            // Fallback to App Store if app doesn't open after delay
-            setTimeout(function () {
-                window.location.href = "https://onelink.to/bgxpr5";
-            }, 1500); // Slight delay for app attempt
         }
     </script>
 </head>
