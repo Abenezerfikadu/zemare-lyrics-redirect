@@ -10,14 +10,17 @@
 
             // Attempt to open the app with the deep link if songId is provided
             if (songId) {
-                // Construct the deep link to pass the songId to the app
-                window.location.href = `zemare://lyrics?songId=${songId}`;
+                // Redirect to the app's URL with songId
+                window.location.href = `https://abenezerfikadu.github.io?songId=${songId}`;
+            } else {
+                // Go directly to the app store if no songId is provided
+                window.location.href = "https://onelink.to/bgxpr5";
             }
 
-            // Fallback to the app store if the app is not installed or deep link fails
+            // Fallback to the app store if deep link fails
             setTimeout(function () {
-                window.location.href = "https://onelink.to/bgxpr5";  // Fallback URL for app store
-            }, 1500); // Slightly shorter delay for a better user experience
+                window.location.href = "https://onelink.to/bgxpr5";
+            }, 1000);
         }
     </script>
 </head>
