@@ -4,18 +4,24 @@
     <title>Zemare App</title>
     <script>
         function redirect() {
+            const currentUrl = window.location.href;
             const urlParams = new URLSearchParams(window.location.search);
             const songId = urlParams.get('songId');
+
+            // Check if the user is already on the zemare-lyrics-redirect page
+            if (currentUrl.includes("/zemare-lyrics-redirect")) {
+                return; // Stop further redirects to prevent looping
+            }
 
             if (songId) {
                 // Redirect to the lyrics page with songId
                 window.location.href = `https://abenezerfikadu.github.io/zemare-lyrics-redirect/?songId=${songId}`;
             } else {
-                // Redirect directly to the App Store link if no songId is present
+                // Directly go to the app store if no songId is provided
                 window.location.href = "https://onelink.to/bgxpr5";
             }
 
-            // Fallback to App Store in case the lyrics page fails to load (only triggers if songId is present)
+            // Fallback to App Store if lyrics page fails to load
             setTimeout(function () {
                 if (songId) {
                     window.location.href = "https://onelink.to/bgxpr5";
