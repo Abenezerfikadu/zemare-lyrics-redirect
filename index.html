@@ -5,11 +5,11 @@
     <script>
         function redirect() {
             const urlParams = new URLSearchParams(window.location.search);
-            const songId = urlParams.get('songId');
+            const songId = urlParams.get('songid');
 
             if (songId) {
                 // Try to open the app using the custom scheme
-                window.location.href = `zemare://lyrics?songId=${songId}`;
+                window.location.href = `zemare://lyrics?songid=${songid}`;
 
                 // Fallback to App Store if the app does not open
                 setTimeout(function () {
