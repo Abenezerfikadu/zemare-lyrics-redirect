@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kf.zemareapp",
+      "sha256_cert_fingerprints": [
+        "SHA256: E2:DE:7F:7F:EE:D6:84:CB:11:4F:9D:DC:C6:29:40:16:31:34:86:60:B2:D5:64:F7:B4:5E:02:DB:57:BE:37:E4"
+      ]
+    }
+  }
+]
