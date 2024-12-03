@@ -4,5 +4,11 @@
       "src": "index.html",
       "use": "@vercel/static"
     }
+  ],
+  "routes": [
+    {
+      "src": "/.well-known/assetlinks.json",
+      "dest": "/public/.well-known/assetlinks.json"
+    }
   ]
 }
