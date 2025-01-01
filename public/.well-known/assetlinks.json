@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.kf.zemareapp",
       "sha256_cert_fingerprints": [
-        "SHA256: E2:DE:7F:7F:EE:D6:84:CB:11:4F:9D:DC:C6:29:40:16:31:34:86:60:B2:D5:64:F7:B4:5E:02:DB:57:BE:37:E4"
+        "SHA256: E2:DE:7F:7F:EE:D6:84:CB:11:4F:9D:DC:C6:29:40:16:31:34:86:60:B2:D5:64:F7:B4:5E:02:DB:57:BE:37:E4",
+        "2E:96:7F:C0:8C:9D:90:54:16:AC:05:45:F0:AF:15:EE:42:28:4B:8D:9D:1C:78:4F:89:47:7F:0E:7D:67:9F:CC"
       ]
     }
   }
