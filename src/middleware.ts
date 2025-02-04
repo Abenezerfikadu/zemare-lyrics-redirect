@@ -4,7 +4,9 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
  
   const { pathname } = request.nextUrl;
-console.log("Middleware executed for:", pathname);
+  
+  console.log("Middleware executed for:", pathname);
+
   if (pathname === "/.well-known/assetlinks.json") {
     return new Response("Forbidden", { status: 403 });
   }
