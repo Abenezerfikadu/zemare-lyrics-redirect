@@ -8,7 +8,10 @@ export function middleware(request: NextRequest) {
   console.log("Middleware executed for:", pathname);
 
   if (pathname === "/.well-known/assetlinks.json") {
-    return new Response("Forbidden", { status: 403 });
+    if (pathname === "/.well-known/assetlinks.json") {
+      return NextResponse.next();
+    }
+
   }
 
   return NextResponse.next();
